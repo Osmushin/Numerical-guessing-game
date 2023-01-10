@@ -23,4 +23,4 @@ while True:
         print('А может быть все-таки введем целое число от 1 до 100?')
 
 print('Its test PySharm and GIT')
-print('I like this program')
+print('I like this progrdsdadam')
