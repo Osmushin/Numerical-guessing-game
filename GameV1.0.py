@@ -8,15 +8,24 @@ def is_valid(number):
     else:
         return False
 
+
+def is_diff(difficulty):
+    diff = 'легкосреднесложно'
+    while difficulty not in diff:
+        print('Выберите сложность игры: легко, средне или сложно')
+        difficulty = input().lower()
+    if difficulty == 'легко':
+        return 30
+    elif difficulty == 'средне':
+        return 60
+    elif difficulty == 'сложно':
+        return 100
+
+
 def game():
     print('Выберите сложность игры: легко, средне или сложно')
-    difficulty = input()
-    if difficulty == 'легко':
-        right = 30
-    elif difficulty == 'средне':
-        right = 60
-    elif difficulty == 'сложно':
-        right = 100
+    difficulty = input().lower()
+    right = is_diff(difficulty)
     hidden_num = randint(1, right)
     score = 0
     while True:
@@ -47,5 +56,6 @@ def game():
         print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
         return False
 
-while game() == True:
+
+while game():
     game()
