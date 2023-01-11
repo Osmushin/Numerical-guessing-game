@@ -2,6 +2,7 @@ from random import *
 
 print('Добро пожаловать в игру Числовая Угадайка!!')
 
+
 def is_valid(number):
     if number.isdigit() and 1 <= int(number) <= 100:
         return True
@@ -49,7 +50,11 @@ def game():
 
     print('Если хотите сыграть еще раз - введите "да" ')
     print('Если не хотите продолжать игру введите "стоп"')
-    answer = input()
+    answer = input().lower()
+    while answer not in 'дастоп':
+        print('Если хотите сыграть еще раз - введите "да" ')
+        print('Если не хотите продолжать игру введите "стоп"')
+        answer = input().lower()
     if answer == 'да':
         return True
     elif answer == 'стоп':
