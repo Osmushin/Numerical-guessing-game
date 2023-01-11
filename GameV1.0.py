@@ -9,10 +9,18 @@ def is_valid(number):
         return False
 
 def game():
-    hidden_num = randint(1, 100)
+    print('Выберите сложность игры: легко, средне или сложно')
+    difficulty = input()
+    if difficulty == 'легко':
+        right = 30
+    elif difficulty == 'средне':
+        right = 60
+    elif difficulty == 'сложно':
+        right = 100
+    hidden_num = randint(1, right)
     score = 0
     while True:
-        print('Введите число от 1 до 100')
+        print('Введите число от 1 до', right)
         number = input()
 
         if is_valid(number) == True:
@@ -38,8 +46,6 @@ def game():
     elif answer == 'стоп':
         print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
         return False
-
-game()
 
 while game() == True:
     game()
